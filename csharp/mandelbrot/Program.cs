@@ -64,7 +64,7 @@ public static class Program
 {
     public static void Main()
     {
-        var byIntensity = "`.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@";
+        var byIntensity = "`.-':_,^=;><+rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@";
         var diagram = Mandelbrot.ComputeDiagram(new LinearMap(-2.2, 2, 0, 80), new LinearMap(-1.5, 1.5, 0, 40), byIntensity.Length);
         Mandelbrot.RenderAsciiDiagram(Console.Out, byIntensity, diagram);
     }
