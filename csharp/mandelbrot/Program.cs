@@ -28,7 +28,7 @@ public class Mandelbrot
 
     public static int[,] ComputeDiagram(LinearMap real, LinearMap imag, int maxInterations)
     {
-        var buffer = new int[(int)(real.A1 - real.A0), (int)(imag.A1 - imag.A0)];
+        var buffer = new int[(int)(real.B1 - real.B0), (int)(imag.B1 - imag.B0)];
         for(int x=0; x<buffer.GetLength(0); x++)
         {
             for(int y=0; y<buffer.GetLength(1); y++)
@@ -65,7 +65,7 @@ public static class Program
     public static void Main()
     {
         var byIntensity = "`.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@";
-        var diagram = Mandelbrot.ComputeDiagram(new LinearMap(-2, 2, 0, 80), new LinearMap(-2, 2, 0, 40), byIntensity.Length);
+        var diagram = Mandelbrot.ComputeDiagram(new LinearMap(-2.2, 2, 0, 80), new LinearMap(-1.5, 1.5, 0, 40), byIntensity.Length);
         Mandelbrot.RenderAsciiDiagram(Console.Out, byIntensity, diagram);
     }
 }
