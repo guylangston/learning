@@ -1,6 +1,5 @@
 use num::complex::Complex64;
 
-
 // https://en.wikipedia.org/wiki/Mandelbrot_set#Computer_drawings
 //
 struct LinearMap {
@@ -10,10 +9,14 @@ struct LinearMap {
     b1: f64,
 }
 
-fn linear_map_to_a(map: &LinearMap, b:f64) -> f64 {
-    let r = (b - map.b0) / (map.b1 - map.b0);
-    return (map.a1 - map.a0)*r + map.a0;
+impl LinearMap {
+    fn new(a0: f64, a1: f64, b0: f64, b1: f64) -> Self { LinearMap { a0, a1, b0, b1 } }
+    fn linear_map_to_a(&self, b:f64) -> f64 {
+        let r = (b - self.b0) / (self.b1 - self.b0);
+        return (self.a1 - self.a0)*r + self.a0;
+    }
 }
+
 
 fn intterate_z(c: Complex64, upper_bound: f64, max_itterations: u32) -> i32 {
     let mut i : i32 = 0;
@@ -34,8 +37,8 @@ fn compute_diagram(map_real: &LinearMap, map_imag: &LinearMap) -> Vec<Vec<i32>> 
     let mut buffer = vec![vec![0; buffer_x]; buffer_y];
     for y in 0..buffer.len() {
         for x in 0..buffer[y].len() {
-            let a = linear_map_to_a(map_real, x as f64);
-            let b = linear_map_to_a(map_imag, y as f64);
+            let a = map_real.linear_map_to_a(x as f64);
+            let b = map_imag.linear_map_to_a(y as f64);
             let c = Complex64 { re: a, im: b };
             buffer[y][x] = intterate_z(c, 10000.0, 100);
         }
@@ -44,18 +47,8 @@ fn compute_diagram(map_real: &LinearMap, map_imag: &LinearMap) -> Vec<Vec<i32>> 
 }
 
 fn main() {
-    let lin_real = LinearMap {
-        a0: -2.0,
-        a1: 2.0,
-        b0: 0.0,
-        b1: 80.0,
-    };
-    let lin_imag = LinearMap {
-        a0: -2.0,
-        a1: 2.0,
-        b0: 0.0,
-        b1: 40.0,
-    };
+    let lin_real = LinearMap::new( -2.3, 1.2, 0.0, 80.0 );
+    let lin_imag = LinearMap::new( -2.0, 2.0, 0.0, 40.0 );
 
     let buffer = compute_diagram(&lin_real, &lin_imag);
 
@@ -78,10 +71,4 @@ fn main() {
         }
         println!();
     }
-
-
-
-
-
-
 }
