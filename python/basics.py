@@ -19,6 +19,7 @@ def double(x:int) -> int:
     return x*3
 
 def bob(x) -> str:
+    """ bob adds a one char to x """
     x = str(x) + "1"
     return x
 
