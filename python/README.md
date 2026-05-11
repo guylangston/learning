@@ -3,17 +3,65 @@
 Good place to start [python.org docs](https://docs.python.org/release/3.14.4/tutorial/introduction.html):
  - https://docs.python.org/3.14/tutorial/stdlib.html
 
+# Question List
+
+- [x] lambda method
+- [x] async vs concurrent vs threading vs multi-processing vs IO
+- [x] import/module mechanism
+- [ ] scope, visibility (private,protected,public)
+- [ ] __init__ vs __new__
+- [ ] FastAPI
+- [ ] postgres
+- [ ] explain the python type + type annotation system
+- [ ] explain iterators in more detail
+- [ ] explain ContextManagers and __enter__, __exit__ in more detail
+- [ ] does python have generics list C# `List<Person>`
+- [ ] explain `Protocol` in more detail ("extremely pythonic", like interfaces)
+
+# Pythons is
+- Python is very duck-typed: If it behaves like what I need, I can use it.
+- Python byte-code locked by GIL (global python lock)
+- Python is protocol based. `from typing import Protocol`
+
 Quick info:
-- `__method__` is called a dunder/magic method
+- `__method__` is called a dunder/magic method. They are not meant to be called directly most of the time.
+Instead, Python calls them for you when you use language features.
+- `__str__` human string; `__repr__` debug string
+- `__bool__` where an object is in `True` state?
+- `__eq__`, `__ne__` object.Equals(), `NotImplemented` type for `C#:NotSupported+lang feature`
+- `__contains__` allows `if 123 in some_list`, If __contains__ is absent, Python may try iteration.
+- `__call__(self, ...)` Makes an instance callable like a function.
+- `__hash__` -> `C# object.GetHashCode()`
+
+## imports
+- `import module` ≈ “load this file as a named namespace object”
+- `from module import thing` ≈ “bring this member into local scope”
+- module-level variables/functions/classes ≈ static members inside a namespace-like container
+- package structure ≈ folder-based namespace organization
+
+## typeing
+
+- `def find_name(id: int) -> str | None:` modern vs `def find_name(id: int) -> Optional[str]:`
+- unions `int | float`
+- collections:
+```
+people: list[Person]
+lookup: dict[str, Person]
+pairs: list[tuple[str, int]]
+```
+- type aliases:
+```
+type UserId = int
+type ScoresByUser = dict[UserId, list[float]]
+```
 
 ## lamda
-
 
 ```py
 lambda x: x + 1
 ```
 
-## Conditional/tenary operator:
+## Conditional/ternary operator:
 
 ```c_sharp
 var some_var = x == 1 ? : "one" : "other"
