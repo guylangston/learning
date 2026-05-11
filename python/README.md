@@ -14,14 +14,16 @@ Good place to start [python.org docs](https://docs.python.org/release/3.14.4/tut
 - [ ] postgres
 - [ ] explain the python type + type annotation system
 - [ ] explain iterators in more detail
-- [ ] explain ContextManagers and __enter__, __exit__ in more detail
+- [ ] explain `ContextManagers` and __enter__, __exit__ in more detail
 - [ ] does python have generics list C# `List<Person>`
 - [ ] explain `Protocol` in more detail ("extremely pythonic", like interfaces)
+- [ ] C# `Func<T>` use `from collections.abc import Callable` where ABC => Abstract Base Class
 
 # Pythons is
 - Python is very duck-typed: If it behaves like what I need, I can use it.
 - Python byte-code locked by GIL (global python lock)
 - Python is protocol based. `from typing import Protocol`
+- Python uses gradual typing.
 
 Quick info:
 - `__method__` is called a dunder/magic method. They are not meant to be called directly most of the time.
@@ -32,12 +34,25 @@ Instead, Python calls them for you when you use language features.
 - `__contains__` allows `if 123 in some_list`, If __contains__ is absent, Python may try iteration.
 - `__call__(self, ...)` Makes an instance callable like a function.
 - `__hash__` -> `C# object.GetHashCode()`
+- `cast(str, some_unknown_val)` does nothing at runtime, just aids static typing/tooling
+
 
 ## imports
 - `import module` ≈ “load this file as a named namespace object”
 - `from module import thing` ≈ “bring this member into local scope”
 - module-level variables/functions/classes ≈ static members inside a namespace-like container
 - package structure ≈ folder-based namespace organization
+
+## visibility
+ Python does not have C#-style access modifiers.
+
+Instead, it uses naming conventions:
+
+    name → public by convention
+    _name → “internal/protected-ish” by convention
+    __name → triggers name mangling to avoid accidental access/override
+    __name__ → special “dunder” names reserved for Python protocols, not privacy
+
 
 ## typeing
 
