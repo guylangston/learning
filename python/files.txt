@@ -1,0 +1,17 @@
+Stanford CS336 I Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 5： GPUs [6OBtO9niT00].webm
+Stanford CS336 Lang. Modeling from Scratch ｜ Spring 2025 ｜ Lec. 3： Architectures, Hyperparameters [ptFiH_bHnJw].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lec. 2： Pytorch, Resource Accounting [msHyYioAyNE].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 10： Inference [fcgPYo3OtV0].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 11： Scaling laws 2 [OSYuUqGBQxw].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 12： Evaluation [x-R5l2HsXqM].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 13： Data 1 [WePxmeXU1xg].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 14： Data 2 [9Cd0THLS1t0].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 15： Alignment - SFT⧸RLHF [Dfu7vC9jo4w].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 16： Alignment - RL 1 [46f2QTDB08Q].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 17： Alignment - RL 2 [JdGFdViaOJk].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 1： Overview and Tokenization [SQ3fZ1sAqXI].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 4： Mixture of experts [LPv1KfUXLCo].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 6： Kernels, Triton [E8Mju53VB00].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 7： Parallelism 1 [l1RJcDjzK8M].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 8： Parallelism 2 [LHpr5ytssLo].webm
+Stanford CS336 Language Modeling from Scratch ｜ Spring 2025 ｜ Lecture 9： Scaling laws 1 [6Q-ESEmDf4Q].webm
