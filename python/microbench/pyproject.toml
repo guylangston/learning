@@ -1,0 +1,12 @@
+[project]
+name = "microbench"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "pyperf>=2.10.0",
+    "pytest>=9.1.1",
+    "pytest-benchmark>=5.3.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
