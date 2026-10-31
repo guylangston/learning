@@ -123,18 +123,24 @@ class BitStream:
             self.stream[-1] |= 0x80 >> self.bit_idx
         self.bit_idx += 1
 
-def compress(target: BitStream, root: NodeComposite, source: str) -> None:
+
+def build_lookup(root: NodeComposite) -> dict[str, list[bool]]:
+    """ find each leaf, then generate the Left/Right or 0/1 path to node """
+    raise NotImplementedError()
+
+def compress(target: BitStream, lookup: dict[str, list[bool]], source: str) -> None:
     raise NotImplementedError()
 
 if __name__ == "__main__":
 
     all = sys.stdin.read()
     freq = scan_freq(all)
-    huff = build_huffman_tree(freq)
+    huff_root = build_huffman_tree(freq)
+    huff_lookup = build_lookup(huff_root)
 
     compressed = BitStream()
-    compress(compressed, huff, all)
+    compress(compressed, huff_lookup, all)
 
     if "--svg" in sys.argv:
-        write_graphvis(huff)
+        write_graphvis(huff_root)
         print("see huffman-tree.dot")
